@@ -47,7 +47,7 @@ def dbscan(X, eps, min_pts):
 
 # 绘制聚类结果
 def plot_clusters(X, labels, title, save_path):
-    plt.rcParams['font.sans-serif'] = ['Noto Sans CJK SC', 'DejaVu Sans', 'SimHei', 'Arial Unicode MS', 'sans-serif']
+    plt.rcParams['font.sans-serif'] = [ 'SimHei']
     plt.rcParams['axes.unicode_minus'] = False
     plt.figure(figsize=(8,6))
     unique_labels = set(labels)
@@ -70,7 +70,8 @@ def plot_clusters(X, labels, title, save_path):
 # 主程序
 if __name__ == "__main__":
     import os
-    fig_dir = "/home/kai/桌面/Pattern-Recognition-and-Machine-Learning-Assignment-Record/work/work_5/cluster_figures"
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    fig_dir = os.path.join(base_dir, "cluster_figures")
     if not os.path.exists(fig_dir):
         os.makedirs(fig_dir)
     # 选择不同的邻域参数
